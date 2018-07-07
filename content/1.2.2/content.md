@@ -381,7 +381,7 @@ COMMIT;
 
 ```
 
-This script first creates an enumerable type for boroughs, then the restaurants table, and finally the grades table. The `BEFORE;` and `AFTER;` commands ensure that these commands succeed or fail together. So if creating the restaurants table succeeds but the grades table fails, neither table will be created.
+This script first creates an enumerable type for boroughs, then the restaurants table, and finally the grades table. The `BEGIN;` and `COMMIT;` commands ensure that these commands succeed or fail together. So if creating the restaurants table succeeds but the grades table fails, neither table will be created.
 
 Note that we use snake case for all column names in our tables. The values we indicate here correspond to the `field` values we set in the respective attribute definitions in our Sequelize models.
 
@@ -394,4 +394,3 @@ In our grades table, we set define the relationship between restaurants and grad
 If you were creating this app from scratch and without the backup data we used, you'd need to run this migration before starting the app. Otherwise, any query Sequelize would make to the database would fail because no tables would be created.
 
 Later in this lesson when we discuss continuous integration with Sequelize, we'll learn how and when to handle migrations in production.
-
