@@ -15,13 +15,13 @@ One quick note: although Sequelize is currently the most popular SQL-based ORM f
 
 Our app provides API endpoints for polls. A poll consists of a name, question, and a tally of yes and no votes. So for instance, you might have a poll called "ES5 vs. ES6" that asks, "Do you mainly code in ES5 or ES6?"
 
-Below, you'll find a live version of our polling app running on Gomix. This app is connected to an ElephantSQL database that has been seeded with fake data so we can make requests and get something back.
+Below, you'll find a live version of our polling app running on Glitch. This app is connected to an ElephantSQL database that has been seeded with fake data so we can make requests and get something back.
 
-<iframe src="https://gomix.com/#!/project/node-minimal-express-sequelize-app" width="100%" height="600px"></iframe>
+<iframe src="https://glitch.com/edit/#!/node-minimal-express-sequelize-app" width="100%" height="600px"></iframe>
 
-We'll dive into the code in a moment, but first take a moment to make some requests to the app using Postman, as we've done in previous assignments. Make a GET request to `https://node-minimal-express-sequelize-app.gomix.me/polls`, and you'll get back all polls from the database.
+We'll dive into the code in a moment, but first take a moment to make some requests to the app using Postman, as we've done in previous assignments. Make a GET request to `https://node-minimal-express-sequelize-app.glitch.me/polls`, and you'll get back all polls from the database.
 
-After you make the request, have a look at the logs inside the Gomix instance. You should see a line that looks something like this:
+After you make the request, have a look at the logs inside the Glitch instance. You should see a line that looks something like this:
 
 ```
 Executing (default): SELECT "id", "name", "question", "yes_votes" AS "yesVotes", "no_votes" AS "noVotes", "created_at", "updated_at" FROM "polls" AS "poll";
@@ -47,7 +47,7 @@ As you can see, our API represents polls using JSON objects that look like this:
 
 We get back `id`, `name`, `question`, `yesVotes`, `noVotes`, `created_at`, and `updated_at` properties. If you're wondering about the combination of snake case (`foo_bar`) and camel case (`fooBar`) here, don't worry. This stems from one of Sequelize's quirks, and we'll explain it a bit later.
 
-For the remainder of this assignment, you can follow along using the Gomix above, or you can clone [this repo](https://github.com/Thinkful-Ed/node-minimal-sequelize-app) and walk through the code in your text editor.
+For the remainder of this assignment, you can follow along using the Glitch above, or you can clone [this repo](https://github.com/Thinkful-Ed/node-minimal-sequelize-app) and walk through the code in your text editor.
 
 ## Connecting to the database
 
@@ -286,4 +286,3 @@ Like with Mongoose, Sequelize queries return a promise object. Here, we use the 
 Spend a few minutes looking over our routes, paying attention to the use of `findAll`, `findById`, `create`, `update`, and `destroy`. You can read up on these methods in the [Sequelize docs](http://sequelize.readthedocs.io/en/v3/api/model/).
 
 This reading has given you a sense of the basics of working with Sequelize. In the next assignment, we'll examine a more complex app and get into relationships, migrations, and testing.
-
