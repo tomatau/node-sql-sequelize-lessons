@@ -105,7 +105,7 @@ This is called the [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) 
 
 The key takeaway here is that your Sequelize apps will need to have a module that creates a Sequelize instance, and that instance will be imported by your models. You can follow the same pattern we've used here (i.e., the code from `./db/sequelize.js`) in the apps you create.
 
-Also, be aware that the approach we're recommending here is slightly different than what you may find if you Google "sequelize express example". That search would likely lead you to [this example](http://docs.sequelizejs.com/en/1.7.0/articles/express/) from the docs for an earlier version of Sequelize. While we won't go into the details of why and how here, know that this example uses a quirky design pattern that is hard to reason about and quite different than the experience of working with comparable ORMs.
+Also, be aware that the approach we're recommending here is slightly different than what you may find if you Google "sequelize express example". That search would likely lead you to [this example](https://sequelize.readthedocs.io/en/1.7.0/articles/express/) from the docs for an earlier version of Sequelize. While we won't go into the details of why and how here, know that this example uses a quirky design pattern that is hard to reason about and quite different than the experience of working with comparable ORMs.
 
 ## Defining models
 
